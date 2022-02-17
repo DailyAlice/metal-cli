@@ -34,10 +34,10 @@ type Client struct {
 
 func (c *Client) NewCommand() *cobra.Command {
 	var cmd = &cobra.Command{
-		Use:     "user",
+		Use: `user`,
 		Aliases: []string{"users"},
-		Short:   "User operations",
-		Long:    `User operations: get`,
+		Short: "User operations",
+		Long: "User operations: get",
 
 		PersistentPreRun: func(cmd *cobra.Command, args []string) {
 			if root := cmd.Root(); root != nil {

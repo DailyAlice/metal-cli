@@ -11,7 +11,8 @@ Command line interface for Equinix Metal
 ```
       --config string        Path to JSON or YAML configuration file
       --exclude strings      Comma seperated Href references to collapse in results, may be dotted three levels deep
-      --filter stringArray   Filter 'get' actions with name value pairs. Filter is not supported by all resources and is implemented as request query parameters.
+      --filter stringArray   Filter 'get' actions with name value pairs.
+                              Filter is not supported by all resources and is implemented as request query parameters.
   -h, --help                 help for metal
       --include strings      Comma seperated Href references to expand in results, may be dotted three levels deep
   -o, --output string        Output format (*table, json, yaml)

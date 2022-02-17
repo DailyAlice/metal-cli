@@ -24,6 +24,7 @@ import (
 	"github.com/packethost/packngo"
 	"github.com/pkg/errors"
 	"github.com/spf13/cobra"
+
 )
 
 func (c *Client) Retrieve() *cobra.Command {
@@ -33,17 +34,15 @@ func (c *Client) Retrieve() *cobra.Command {
 
 	// retriveUserCmd represents the retriveUser command
 	retrieveUserCmd := &cobra.Command{
-		Use:   "get",
-		Short: "Retrieves information about the current user or a specified user",
-		Long: `Example:
+		Use: `get [-i <User_UUID>]`,
+		Short: "Retrieves information about the current user or a specified user.",
+		Long: "Returns either information about the current user or information about the specified user, if it is available. User information is typically only available if the user shares projects with the current user.",
+		Example: `  # Retrieve information about the current user:
+  metal user get
 
-Retrieve the current user:
-metal user get
-  
-Retrieve a specific user:
-metal user get --id [user_UUID]
-
-  `,
+  # Retrieve the information of the user with UUID 25862acd-c71e-4322-a2ef-5b73fdf5c5b2:
+  metal user get -i 25862acd-c71e-4322-a2ef-5b73fdf5c5b2`,
+		
 		RunE: func(cmd *cobra.Command, args []string) error {
 			cmd.SilenceUsage = true
 			var err error
